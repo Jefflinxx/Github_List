@@ -8,3 +8,4 @@
 2.npm start
 
 實作技術：
+NodeJS, ReactJS(Hook, React-Route)
