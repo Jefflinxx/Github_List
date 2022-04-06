@@ -1,5 +1,6 @@
 import { React, useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import "../user.css";
 
 const User = () => {
   const [userData, setUserData] = useState([]);
@@ -28,23 +29,20 @@ const User = () => {
   }, []);
 
   return (
-    <div>
+    <div className="userdata">
       <header>User:{params.username}</header>
       <div>
         <table>
-          <div>
-            <td>name:</td>
-            <td>stargazers conut:</td>
-          </div>
           {userData.map((i) => {
             return (
               <div>
-                <td>
+                <td className="content">
+                  name:
                   <Link to={`/users/${params.username}/repos/${i.name}`}>
                     {i.name}
                   </Link>
                 </td>
-                <td>{i.stars}</td>
+                <td>stargazers conut:{i.stars}</td>
               </div>
             );
           })}
